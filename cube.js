@@ -60,7 +60,7 @@ class Cube {
                 this.mesh.material = meshMaterials[0][Math.floor(3 * Math.random())], this.edges.material = edgeMaterials[0];
                 break;
             case 1:
-                this.mesh.material = meshMaterials[0][Math.floor(3 * Math.random())], this.edges.material = edgeMaterials[1][0];
+                this.mesh.material = meshMaterials[0][Math.floor(3 * Math.random())], this.edges.material = edgeMaterials[1];
                 break;
             case 2:
                 this.mesh.material = meshMaterials[2][0], this.edges.material = edgeMaterials[2];
