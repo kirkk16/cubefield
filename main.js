@@ -68,7 +68,7 @@ function newLevel() {
             plane.material.color.setHex(0), scene.fog.color.setHex(0), triangle.material.color.setHex(16777215), triEdges.material.color.setHex(16777215), document.body.style.backgroundColor = "#000000";
             break;
         case 4:
-            plane.material.color.setHex(16777215), scene.fog.color.setHex(16777215), triangle.material.color.setHex(16724588), triEdges.material.color.setHex(16777215), document.body.style.backgroundColor = "#ffffff"
+            plane.material.color.setHex(16777215), scene.fog.color.setHex(16777215), triangle.material.color.setHex(0), triEdges.material.color.setHex(16777215), document.body.style.backgroundColor = "#ffffff"
     }
 }
 
