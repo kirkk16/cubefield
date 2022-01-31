@@ -1,4 +1,5 @@
 var cubeColors = [14614528, 16774400, 1977825],
+	multiColor = [14614528, 16753920, 16774400, 3338320, 1977825, 13127900],
     meshMaterials = [
         [new THREE.MeshBasicMaterial({
             color: cubeColors[0]
@@ -17,8 +18,18 @@ var cubeColors = [14614528, 16774400, 1977825],
             color: 16777215
         })],
         [new THREE.MeshBasicMaterial({
-            color: 16724588
-        })]
+            color: multiColor[0]
+        }), new THREE.MeshBasicMaterial({
+            color: multiColor[1]
+        }), new THREE.MeshBasicMaterial({
+            color: multiColor[2]
+        }), new THREE.MeshBasicMaterial({
+            color: multiColor[3]
+        }), new THREE.MeshBasicMaterial({
+            color: multiColor[4]
+        }), new THREE.MeshBasicMaterial({
+            color: multiColor[5]
+        })],
     ],
     edgeMaterials = [new THREE.MeshBasicMaterial({
         color: 0
@@ -69,7 +80,7 @@ class Cube {
                 this.mesh.material = meshMaterials[3][0], this.edges.material = edgeMaterials[3];
                 break;
             case 4:
-                this.mesh.material = meshMaterials[4][0], this.edges.material = edgeMaterials[4]
+                this.mesh.material = meshMaterials[4][Math.floor(6 * Math.random())], this.edges.material = edgeMaterials[4]
         }
     }
 }
