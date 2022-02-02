@@ -193,8 +193,10 @@ init(), animate(), document.addEventListener("resize", e => {
 			rightArrow = !0;
 		} else if (80 == key) {
 			pauseGameScreen();
-		} else {
-			38 == key && (upArrow = !0);
+		} else if (38 == key) {
+			upArrow = !0;
+		} else if (87 == key) {
+			upArrow = !0;
 		}
     }
 }), document.addEventListener("keyup", e => {
@@ -212,8 +214,10 @@ init(), animate(), document.addEventListener("resize", e => {
 			leftArrow = !1;
 		} else if (68 == key) {
 			rightArrow = !1;
-		} else {
-			38 == key && (upArrow = !1);
+		} else if (38 == key) {
+			upArrow = !1;
+		} else if (87 == key) {
+			upArrow = !1;
 		}
     }
 });
