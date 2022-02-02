@@ -181,12 +181,39 @@ init(), animate(), document.addEventListener("resize", e => {
     if (null == e.keyCode) e.pageX > .5 * width ? rightArrow = !0 : leftArrow = !0;
     else {
         var key = e.keyCode ? e.keyCode : e.which;
-        37 == key ? leftArrow = !0 : 39 == key ? rightArrow = !0 : 80 == key ? pauseGameScreen() : 38 == key && (upArrow = !0)
+        if (37 == key) {
+			leftArrow = !0;
+		} else if (40 == key) {
+			rightArrow = !0;
+		} else if (39 == key) {
+			rightArrow = !0;
+		} else if (65 == key) {
+			leftArrow = !0;
+		} else if (68 == key) {
+			rightArrow = !0;
+		} else if (80 == key) {
+			pauseGameScreen();
+		} else {
+			38 == key && (upArrow = !0);
+		}
     }
 }), document.addEventListener("keyup", e => {
     if (null == e.keyCode) rightArrow = !1, leftArrow = !1, upArrow = !1;
     else {
         var key = e.keyCode ? e.keyCode : e.which;
-        37 == key ? leftArrow = !1 : 39 == key ? rightArrow = !1 : 38 == key && (upArrow = !1)
+        var key = e.keyCode ? e.keyCode : e.which;
+        if (37 == key) {
+			leftArrow = !1;
+		} else if (40 == key) {
+			rightArrow = !1;
+		} else if (39 == key) {
+			rightArrow = !1;
+		} else if (65 == key) {
+			leftArrow = !1;
+		} else if (68 == key) {
+			rightArrow = !1;
+		} else {
+			38 == key && (upArrow = !1);
+		}
     }
 });
