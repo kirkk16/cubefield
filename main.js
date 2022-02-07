@@ -130,6 +130,19 @@ function pauseGameScreen() {
     0 == phase ? (phase = 1, uiPause.style.visibility = "hidden", uiPause.style.opacity = 0) : 1 == phase && (phase = 0, uiPause.style.visibility = "visible", uiPause.style.opacity = 1)
 }
 
+function pauseImage(number) {
+	if (number == 0) {
+		document.getElementById("pause").style.backgroundImage = "url('fakeClassroom.png')";
+	} else if (number == 1) {
+		document.getElementById("pause").style.backgroundImage = "url('fakeSIS.png')";
+	} else if (number == 2) {
+		document.getElementById("pause").style.backgroundImage = "url('fakeSpanish.png')";
+	}
+	
+	for (var opt = document.getElementById("pauseImage").getElementsByClassName("select"), k = 0; k < 3; k++) opt[k].classList.remove("focus");
+    opt[number].classList.add("focus")
+}
+	
 function returnToMenu() {
     uiPause.style.opacity = 0, uiPause.style.visibility = "hidden", logHighscore(), rotOffset = (new Date).getTime() % 5e4, phase = -1, setPreGame()
 }
@@ -189,6 +202,10 @@ init(), animate(), document.addEventListener("resize", e => {
 			rightArrow = !0;
 		} else if (65 == key) {
 			leftArrow = !0;
+		} else if (27 == key) {
+			returnToMenu();
+		} else if (32 == key) {
+			gameReset();
 		} else if (68 == key) {
 			rightArrow = !0;
 		} else if (80 == key) {
@@ -212,6 +229,10 @@ init(), animate(), document.addEventListener("resize", e => {
 			rightArrow = !1;
 		} else if (65 == key) {
 			leftArrow = !1;
+		} else if (27 == key) {
+			returnToMenu();
+		} else if (32 == key) {
+			gameReset();
 		} else if (68 == key) {
 			rightArrow = !1;
 		} else if (38 == key) {
