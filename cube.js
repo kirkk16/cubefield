@@ -1,4 +1,4 @@
-var cubeColors = [14614528, 16774400, 1977825],
+var cubeColors = [14614528, 16724588, 16777215],
 	multiColor = [14614528, 16753920, 16774400, 3338320, 1977825, 13127900],
     meshMaterials = [
         [new THREE.MeshBasicMaterial({
